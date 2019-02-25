@@ -4,35 +4,68 @@
  * construct available in Javascript.
  */
 
-// ...
+const max(firstNum, secondNum) {
+  
+  if (firstNum > secondNum) {
+     console.log(firstNum + " is larger than " + secondNum);
+  } else {
+      console.log(firstNum + " is less than " + secondNum);
+  }
+  return;
+
+}
 
 /**
  * Define a function maxOfThree() that takes three
  * numbers as arguments and returns the largest of them.
  */
 
-// ...
+<script>
+  
+  const maxOfThree (num1, num2, num3) {     
+      return Math.max (num1, num2, num3); 
+  }
+    
+  console.log (maxOfThree (15,24,55));
+
+</script>
 
 /*
  * Define a function sum() that takes two numbers as
  * arguments and computes the sum of those two numbers.
  */
 
-// ...
+ const sumTriple (x, y) {
+  if (x == y) {
+    return 3 * (x + y);
+    } 
+   else
+   {
+    return (x + y);
+   }
+ }
+console.log(sumTriple(10, 20));
+console.log(sumTriple(10, 10));
 
 /*
  * Define a function sumOfArray that calculates the sum of
  * all the numbers in an array.
  */
 
-// ...
+ let sumOfArray = [1,2,3,4,5]
+    let total = 0;
+    for(i=0; i<myArray.length; i++){
+        total += myArray[i];
+    }
 
 /**
  * Write a function isVowel() that takes a character (i.e. a string of length 1)
  * and returns true if it is a vowel, false otherwise.
  */
 
-// ...
+let findVowel = const(letter) {
+  return "aeiou".indexOf(letter) != -1;
+};
 
 /**
  * Write a function rovarspraket() that will translate
