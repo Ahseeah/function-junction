@@ -4,15 +4,12 @@
  * construct available in Javascript.
  */
 
-const max(firstNum, secondNum) {
-  
-  if (firstNum > secondNum) {
-     console.log(firstNum + " is larger than " + secondNum);
+const max = (a, b) => {
+  if (a > b) {
+    return a
   } else {
-      console.log(firstNum + " is less than " + secondNum);
+    return b
   }
-  return;
-
 }
 
 /**
@@ -20,52 +17,63 @@ const max(firstNum, secondNum) {
  * numbers as arguments and returns the largest of them.
  */
 
-<script>
-  
-  const maxOfThree (num1, num2, num3) {     
-      return Math.max (num1, num2, num3); 
+const maxOfThree = (a, b, c) => {
+  if (a > b) {
+    if (a > c) {
+      return a
+    } else {
+      return c
+    }
+  } else {
+    if (b > c) {
+      return b
+    } else {
+      return c
+    }
   }
-    
-  console.log (maxOfThree (15,24,55));
-
-</script>
+}
 
 /*
  * Define a function sum() that takes two numbers as
  * arguments and computes the sum of those two numbers.
  */
 
- const sumTriple (x, y) {
-  if (x == y) {
-    return 3 * (x + y);
-    } 
-   else
-   {
-    return (x + y);
-   }
- }
-console.log(sumTriple(10, 20));
-console.log(sumTriple(10, 10));
+const sum = (a, b) => {
+  return a + b
+}
 
 /*
  * Define a function sumOfArray that calculates the sum of
  * all the numbers in an array.
  */
 
- let sumOfArray = [1,2,3,4,5]
-    let total = 0;
-    for(i=0; i<myArray.length; i++){
-        total += myArray[i];
-    }
+const sumOfArray = arr => {
+  let sum = 0
+  for (let index = 0; index < arr.length; index++) {
+    sum += arr[index]
+  }
+  return sum
+}
 
 /**
  * Write a function isVowel() that takes a character (i.e. a string of length 1)
  * and returns true if it is a vowel, false otherwise.
  */
 
-let findVowel = const(letter) {
-  return "aeiou".indexOf(letter) != -1;
-};
+const isVowel = char => {
+  const myChar = char.toLowerCase()
+  if (
+    myChar === 'a' ||
+    myChar === 'e' ||
+    myChar === 'i' ||
+    myChar === 'o' ||
+    myChar === 'u'
+  ) {
+    return true
+  } else {
+    return false
+  }
+}
 
 /**
  * Write a function rovarspraket() that will translate
@@ -76,7 +84,28 @@ let findVowel = const(letter) {
  * return the string "tothohisos isos fofunon".
  */
 
-// ...
+const rovarspraket = myString => {
+  let letters = myString.split('')
+  let rovar = []
+  for (let i = 0; i < letters.length; i++) {
+    if (
+      !(
+        letters[i] === 'a' ||
+        letters[i] === 'e' ||
+        letters[i] === 'i' ||
+        letters[i] === 'o' ||
+        letters[i] === 'u'
+      )
+    ) {
+      rovar.push(letters[i])
+      rovar.push('o')
+      rovar.push(letters[i])
+    } else {
+      rovar.push(letters[i])
+    }
+  }
+  return rovar.join('')
+}
 
 /**
  * Define a function reverse() that computes
@@ -85,7 +114,13 @@ let findVowel = const(letter) {
  * string "books".
  */
 
-// ...
+const reverse = myString => {
+  let revString = []
+  for (let i = myString.length; i >= 0; i--) {
+    revString.push(myString[i])
+  }
+  return revString.join('')
+}
 
 /**
  * Write a function findLongestWord() that takes an
@@ -94,7 +129,18 @@ let findVowel = const(letter) {
  * i.e. findLongestWord("book dogs") should return "book"
  */
 
-// ...
+const findLongestWord = myString => {
+  const words = myString.split(' ')
+  let longest = 0
+  for (let i = 0; i < words.length - 1; i++) {
+    if (words[i].length >= words[i + 1].length) {
+      longest = i
+    } else {
+      longest = i + 1
+    }
+  }
+  return words[longest]
+}
 
 /**
  * NOTE: Don't modify anything below this line...
